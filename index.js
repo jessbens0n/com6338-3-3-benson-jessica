@@ -12,3 +12,17 @@ var questionsArr = [
     { question: trueOrFalse + 'Sharks are mammals.', 
     answer: false }
 ]
+
+var numCorrect = 0
+
+function runQuiz() {
+    for (var i = 0; i<questionsArr.length; i++) {
+        if(confirm(questionsArr[i].question)===questionsArr[i].answer){
+        numCorrect++
+            }
+    }
+    var score = Math.round ((numCorrect/questionsArr.length) * 100)
+
+    alert ("You scored " + score + "%!")
+    numCorrect=0
+}
